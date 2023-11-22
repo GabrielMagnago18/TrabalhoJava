@@ -4,15 +4,16 @@
  */
 package com.mycompany.trabalhojava;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author conta
  */
 public class ControleCadastros extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ControleCadastros
-     */
+    ArrayList<Aluno> arrayAlunos = new ArrayList<Aluno>();
+    javax.swing.JFrame atual;
+    
     public ControleCadastros() {
         initComponents();
     }
@@ -481,10 +482,20 @@ public class ControleCadastros extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cadastrarAluno.setText("Cadastrar aluno");
+        cadastrarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarAlunoActionPerformed(evt);
+            }
+        });
 
         deletarAluno.setText("Deletar aluno");
 
         atualizar.setText("Atualizar");
+        atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Nome");
 
@@ -678,6 +689,16 @@ public class ControleCadastros extends javax.swing.JFrame {
     private void nomeAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeAlunoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeAlunoActionPerformed
+
+    private void cadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarAlunoActionPerformed
+        CadastroAluno temp = new CadastroAluno();
+        temp.setArrayAluno(arrayAlunos);
+        temp.setVisible(true);
+    }//GEN-LAST:event_cadastrarAlunoActionPerformed
+
+    private void atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarActionPerformed
+        System.out.println(arrayAlunos);
+    }//GEN-LAST:event_atualizarActionPerformed
 
     /**
      * @param args the command line arguments
