@@ -81,22 +81,26 @@ public class ControleCadastros extends javax.swing.JFrame {
         jTextField17 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        alunos = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        cadastrarAluno = new javax.swing.JButton();
+        deletarAluno = new javax.swing.JButton();
+        atualizar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nomeAluno = new javax.swing.JTextField();
+        matriculaAluno = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        cadastrarSala = new javax.swing.JButton();
+        deletarSala = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        agendarDefesa = new javax.swing.JButton();
+        excluirDefesa = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        cadastrarProfessor = new javax.swing.JButton();
+        deletarProfessor = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
 
         jButton1.setText("Cadastrar");
@@ -476,11 +480,21 @@ public class ControleCadastros extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton8.setText("Cadastrar aluno");
+        cadastrarAluno.setText("Cadastrar aluno");
 
-        jButton9.setText("Deletar aluno");
+        deletarAluno.setText("Deletar aluno");
 
-        jButton10.setText("Atualizar");
+        atualizar.setText("Atualizar");
+
+        jLabel1.setText("Nome");
+
+        jLabel2.setText("Matrícula");
+
+        nomeAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeAlunoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -488,29 +502,49 @@ public class ControleCadastros extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton8)
+                .addComponent(cadastrarAluno)
                 .addGap(18, 18, 18)
-                .addComponent(jButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
-                .addComponent(jButton10)
+                .addComponent(deletarAluno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 370, Short.MAX_VALUE)
+                .addComponent(atualizar)
                 .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nomeAluno))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(matriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap(366, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10)
-                    .addComponent(jButton9)
-                    .addComponent(jButton8))
+                    .addComponent(jLabel1)
+                    .addComponent(nomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(matriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(atualizar)
+                    .addComponent(deletarAluno)
+                    .addComponent(cadastrarAluno))
                 .addGap(18, 18, 18))
         );
 
-        jTabbedPane1.addTab("Alunos", jPanel6);
+        alunos.addTab("Alunos", jPanel6);
 
-        jButton11.setText("Cadastrar sala");
+        cadastrarSala.setText("Cadastrar sala");
 
-        jButton12.setText("Deletar Sala");
+        deletarSala.setText("Deletar Sala");
 
         jButton13.setText("Atualizar");
 
@@ -520,9 +554,9 @@ public class ControleCadastros extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton11)
+                .addComponent(cadastrarSala)
                 .addGap(18, 18, 18)
-                .addComponent(jButton12)
+                .addComponent(deletarSala)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 377, Short.MAX_VALUE)
                 .addComponent(jButton13)
                 .addGap(15, 15, 15))
@@ -532,17 +566,17 @@ public class ControleCadastros extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(369, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12)
+                    .addComponent(cadastrarSala)
+                    .addComponent(deletarSala)
                     .addComponent(jButton13))
                 .addGap(15, 15, 15))
         );
 
-        jTabbedPane1.addTab("Sala de Defesa", jPanel7);
+        alunos.addTab("Sala de Defesa", jPanel7);
 
-        jButton14.setText("Agendar Defesa");
+        agendarDefesa.setText("Agendar Defesa");
 
-        jButton15.setText("Excluir defesa");
+        excluirDefesa.setText("Excluir defesa");
 
         jButton16.setText("Atualizar");
 
@@ -552,9 +586,9 @@ public class ControleCadastros extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton14)
+                .addComponent(agendarDefesa)
                 .addGap(18, 18, 18)
-                .addComponent(jButton15)
+                .addComponent(excluirDefesa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
                 .addComponent(jButton16)
                 .addGap(17, 17, 17))
@@ -564,24 +598,24 @@ public class ControleCadastros extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(368, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton14)
-                    .addComponent(jButton15)
+                    .addComponent(agendarDefesa)
+                    .addComponent(excluirDefesa)
                     .addComponent(jButton16))
                 .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("Agendamento de Desesa", jPanel8);
+        alunos.addTab("Agendamento de Defesa", jPanel8);
 
         jPanel1.setName("Sistema de cadastros de TCC"); // NOI18N
 
-        jButton5.setText("Cadastrar professor");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarProfessor.setText("Cadastrar professor");
+        cadastrarProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                cadastrarProfessorActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Deletar professor");
+        deletarProfessor.setText("Deletar professor");
 
         jButton7.setText("Atualizar");
 
@@ -591,9 +625,9 @@ public class ControleCadastros extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton5)
+                .addComponent(cadastrarProfessor)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(deletarProfessor)
                 .addGap(327, 327, 327)
                 .addComponent(jButton7)
                 .addContainerGap(8, Short.MAX_VALUE))
@@ -603,23 +637,23 @@ public class ControleCadastros extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(369, 369, 369)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
+                    .addComponent(cadastrarProfessor)
+                    .addComponent(deletarProfessor)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Professores", jPanel1);
+        alunos.addTab("Professores", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(alunos)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(alunos)
         );
 
         pack();
@@ -637,9 +671,13 @@ public class ControleCadastros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void cadastrarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_cadastrarProfessorActionPerformed
+
+    private void nomeAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -677,22 +715,23 @@ public class ControleCadastros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agendarDefesa;
+    private javax.swing.JTabbedPane alunos;
+    private javax.swing.JButton atualizar;
+    private javax.swing.JButton cadastrarAluno;
+    private javax.swing.JButton cadastrarProfessor;
+    private javax.swing.JButton cadastrarSala;
+    private javax.swing.JButton deletarAluno;
+    private javax.swing.JButton deletarProfessor;
+    private javax.swing.JButton deletarSala;
+    private javax.swing.JButton excluirDefesa;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -701,6 +740,7 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
     private javax.swing.JFrame jFrame4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -710,6 +750,7 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -731,7 +772,6 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -749,5 +789,7 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField matriculaAluno;
+    private javax.swing.JTextField nomeAluno;
     // End of variables declaration//GEN-END:variables
 }
