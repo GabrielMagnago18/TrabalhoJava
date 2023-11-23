@@ -529,21 +529,12 @@ public class ControleCadastros extends javax.swing.JFrame {
 
         tabelaAlunos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Matrícula"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(tabelaAlunos);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -734,10 +725,7 @@ public class ControleCadastros extends javax.swing.JFrame {
     }//GEN-LAST:event_nomeAlunoActionPerformed
 
     private void cadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarAlunoActionPerformed
-        CadastroAluno temp = new CadastroAluno();
-        temp.setArrayAluno(arrayAlunos);
-        temp.setVisible(true);
-        
+
         //recuperar os dados para o preenchimento da tabela
         String nome = nomeAluno.getText();
         String matricula = matriculaAluno.getText();
