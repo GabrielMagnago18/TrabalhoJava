@@ -5,6 +5,8 @@
 package com.mycompany.trabalhojava;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -91,6 +93,8 @@ public class ControleCadastros extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         nomeAluno = new javax.swing.JTextField();
         matriculaAluno = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaAlunos = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         cadastrarSala = new javax.swing.JButton();
         deletarSala = new javax.swing.JButton();
@@ -489,6 +493,16 @@ public class ControleCadastros extends javax.swing.JFrame {
         });
 
         deletarAluno.setText("Deletar aluno");
+        deletarAluno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deletarAlunoMouseClicked(evt);
+            }
+        });
+        deletarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletarAlunoActionPerformed(evt);
+            }
+        });
 
         atualizar.setText("Atualizar");
         atualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -507,48 +521,77 @@ public class ControleCadastros extends javax.swing.JFrame {
             }
         });
 
+        matriculaAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matriculaAlunoActionPerformed(evt);
+            }
+        });
+
+        tabelaAlunos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Matrícula"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabelaAlunos);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cadastrarAluno)
-                .addGap(18, 18, 18)
-                .addComponent(deletarAluno)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 370, Short.MAX_VALUE)
-                .addComponent(atualizar)
-                .addContainerGap())
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(matriculaAluno))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nomeAluno))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cadastrarAluno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nomeAluno))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(matriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(deletarAluno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(atualizar)))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(nomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(matriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(atualizar)
+                    .addComponent(cadastrarAluno)
                     .addComponent(deletarAluno)
-                    .addComponent(cadastrarAluno))
-                .addGap(18, 18, 18))
+                    .addComponent(atualizar))
+                .addGap(21, 21, 21))
         );
 
         alunos.addTab("Alunos", jPanel6);
@@ -568,14 +611,14 @@ public class ControleCadastros extends javax.swing.JFrame {
                 .addComponent(cadastrarSala)
                 .addGap(18, 18, 18)
                 .addComponent(deletarSala)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 377, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
                 .addComponent(jButton13)
                 .addGap(15, 15, 15))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(369, Short.MAX_VALUE)
+                .addContainerGap(360, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarSala)
                     .addComponent(deletarSala)
@@ -600,14 +643,14 @@ public class ControleCadastros extends javax.swing.JFrame {
                 .addComponent(agendarDefesa)
                 .addGap(18, 18, 18)
                 .addComponent(excluirDefesa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
                 .addComponent(jButton16)
                 .addGap(17, 17, 17))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap(368, Short.MAX_VALUE)
+                .addContainerGap(359, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agendarDefesa)
                     .addComponent(excluirDefesa)
@@ -641,7 +684,7 @@ public class ControleCadastros extends javax.swing.JFrame {
                 .addComponent(deletarProfessor)
                 .addGap(327, 327, 327)
                 .addComponent(jButton7)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -651,7 +694,7 @@ public class ControleCadastros extends javax.swing.JFrame {
                     .addComponent(cadastrarProfessor)
                     .addComponent(deletarProfessor)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         alunos.addTab("Professores", jPanel1);
@@ -694,11 +737,52 @@ public class ControleCadastros extends javax.swing.JFrame {
         CadastroAluno temp = new CadastroAluno();
         temp.setArrayAluno(arrayAlunos);
         temp.setVisible(true);
+        
+        //recuperar os dados para o preenchimento da tabela
+        String nome = nomeAluno.getText();
+        String matricula = matriculaAluno.getText();
+        
+        DefaultTableModel tabelaAluno = 
+                (DefaultTableModel) tabelaAlunos.getModel();
+        
+        Object[] novoAluno = new Object[]{
+            nome,
+            matricula
+        };
+        
+        tabelaAluno.addRow(novoAluno);
+        
+        //limpar campos
+        nomeAluno.setText("");
+        matriculaAluno.setText("");
     }//GEN-LAST:event_cadastrarAlunoActionPerformed
 
     private void atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarActionPerformed
         System.out.println(arrayAlunos);
     }//GEN-LAST:event_atualizarActionPerformed
+
+    private void matriculaAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matriculaAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matriculaAlunoActionPerformed
+
+    private void deletarAlunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletarAlunoMouseClicked
+        // TODO add your handling code here: 
+    }//GEN-LAST:event_deletarAlunoMouseClicked
+
+    private void deletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarAlunoActionPerformed
+        // TODO add your handling code here:
+        int posicao = tabelaAlunos.getSelectedRow();
+        if(posicao == -1){
+            JOptionPane.showMessageDialog(this, "Por favor selecione uma linha");
+        }
+        else{
+            DefaultTableModel tabelaAluno = 
+                (DefaultTableModel) tabelaAlunos.getModel();
+            tabelaAluno.removeRow(posicao);
+            JOptionPane.showMessageDialog(this, "Aluno Excluído");
+
+        }
+    }//GEN-LAST:event_deletarAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -793,6 +877,7 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -812,5 +897,6 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField matriculaAluno;
     private javax.swing.JTextField nomeAluno;
+    private javax.swing.JTable tabelaAlunos;
     // End of variables declaration//GEN-END:variables
 }
