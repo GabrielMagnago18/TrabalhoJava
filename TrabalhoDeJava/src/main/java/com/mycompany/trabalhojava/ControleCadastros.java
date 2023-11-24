@@ -1277,14 +1277,14 @@ public class ControleCadastros extends javax.swing.JFrame {
         (DefaultTableModel) tabelaAgendamento.getModel();
 
         Object[] novoAgendamento = new Object[]{
-            codigoAgendamento,
-            codigoSalaAgen,
-            matriculaAlunoAgen,
-            CPFOrientadorAgen,
-            CPFMem1,
-            CPFMem2,
-            CPFMem3,
-            CPFMem4
+            codigo_Agendamento,
+            codigo_SalaAgen,
+            mtricula_AlunoAgen,
+            CPF_OrientadorAgen,
+            CPF_Mem1,
+            CPF_Mem2,
+            CPF_Mem3,
+            CPF_Mem4
         };
 
         tabelaAgendamento_.addRow(novoAgendamento);
