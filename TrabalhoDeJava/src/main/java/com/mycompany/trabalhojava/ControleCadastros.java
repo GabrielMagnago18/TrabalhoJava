@@ -4,7 +4,6 @@
  */
 package com.mycompany.trabalhojava;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -830,7 +829,7 @@ public class ControleCadastros extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -839,7 +838,7 @@ public class ControleCadastros extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabelaProfessores);
         if (tabelaProfessores.getColumnModel().getColumnCount() > 0) {
-            tabelaProfessores.getColumnModel().getColumn(0).setResizable(false);
+            tabelaProfessores.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jLabel3.setText("CPF");
