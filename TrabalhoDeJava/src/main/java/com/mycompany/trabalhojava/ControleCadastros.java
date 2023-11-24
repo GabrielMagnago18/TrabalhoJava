@@ -675,11 +675,11 @@ public class ControleCadastros extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código da Sala", "Nome da Sala", "Local", "Horário Início", "Horário Fim", "Externo"
+                "Código da Sala", "Nome da Sala", "Local", "Horário Início", "Horário Fim"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
