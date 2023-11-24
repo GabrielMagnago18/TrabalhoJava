@@ -737,22 +737,20 @@ public class ControleCadastros extends javax.swing.JFrame {
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3)
                             .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(codigoSala))
-                            .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(externo_)
-                                .addGap(0, 613, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(local_))
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(jLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nomeSala))))
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel4))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nomeSala, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(local_)
+                                    .addComponent(codigoSala)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 10, Short.MAX_VALUE)
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(horarioInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1027,18 +1025,6 @@ public class ControleCadastros extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(cpf_))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(instituicao_))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nomeProfessor))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1047,7 +1033,17 @@ public class ControleCadastros extends javax.swing.JFrame {
                                 .addComponent(cadastrarAluno1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(deletarAluno1)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeProfessor)
+                            .addComponent(cpf_)
+                            .addComponent(instituicao_))))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -1164,14 +1160,14 @@ public class ControleCadastros extends javax.swing.JFrame {
 
     private void deletarAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarAluno1ActionPerformed
         // TODO add your handling code here:
-        int posicao = tabelaAlunos.getSelectedRow();
+        int posicao = tabelaProfessores.getSelectedRow();
         if(posicao == -1){
             JOptionPane.showMessageDialog(this, "Por favor selecione uma linha");
         }
         else{
-            DefaultTableModel tabelaAluno =
-            (DefaultTableModel) tabelaAlunos.getModel();
-            tabelaAluno.removeRow(posicao);
+            DefaultTableModel tabela_Professores =
+            (DefaultTableModel) tabelaProfessores.getModel();
+            tabela_Professores.removeRow(posicao);
             JOptionPane.showMessageDialog(this, "Aluno Excluído");
 
         }
@@ -1322,9 +1318,9 @@ public class ControleCadastros extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor selecione uma linha");
         }
         else{
-            DefaultTableModel tabelaAgendamento =
-            (DefaultTableModel) tabelaAlunos.getModel();
-            tabelaAgendamento.removeRow(posicao);
+            DefaultTableModel tabela_Agendamento =
+            (DefaultTableModel) tabelaAgendamento.getModel();
+            tabela_Agendamento.removeRow(posicao);
             JOptionPane.showMessageDialog(this, "Aluno Excluído");
 
         }
