@@ -838,10 +838,6 @@
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="externo_" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -901,9 +897,7 @@
                               <Component id="horarioInicio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="externo_" min="-2" pref="20" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="121" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -918,7 +912,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="cadastrarAluno2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar aluno"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar Sala "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarAluno2ActionPerformed"/>
@@ -926,7 +920,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="deletarAluno2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Deletar aluno"/>
+                <Property name="text" type="java.lang.String" value="Deletar Sala"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="deletarAluno2MouseClicked"/>
@@ -1023,14 +1017,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="local_ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="externo_">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#xc9; professor externo"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="externo_ActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="horarioInicio">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="horarioInicioActionPerformed"/>
@@ -1087,7 +1073,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="mtriculaAlunoAgen" max="32767" attributes="0"/>
+                                                  <Component id="matriculaAlunoAgen" max="32767" attributes="0"/>
                                                   <Component id="CPFOrientadorAgen" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
@@ -1149,7 +1135,7 @@
                           <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel39" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="CPFMem3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="mtriculaAlunoAgen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="matriculaAlunoAgen" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1240,9 +1226,9 @@
             </Component>
             <Component class="javax.swing.JTextField" name="codigoAgendamento">
             </Component>
-            <Component class="javax.swing.JTextField" name="mtriculaAlunoAgen">
+            <Component class="javax.swing.JTextField" name="matriculaAlunoAgen">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mtriculaAlunoAgenActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="matriculaAlunoAgenActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="CPFOrientadorAgen">
@@ -1259,7 +1245,7 @@
                 <Component class="javax.swing.JTable" name="tabelaAgendamento">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="4">
+                      <Table columnCount="8" rowCount="0">
                         <Column editable="true" title="C&#xf3;digo Agendamento" type="java.lang.String"/>
                         <Column editable="true" title="C&#xf3;digo Sala" type="java.lang.String"/>
                         <Column editable="true" title="Matr&#xed;cula Aluno" type="java.lang.String"/>
