@@ -81,6 +81,9 @@ public class ControleCadastros extends javax.swing.JFrame {
         jTextField17 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         alunos = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         cadastrarAluno = new javax.swing.JButton();
@@ -110,6 +113,24 @@ public class ControleCadastros extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         agendarDefesa = new javax.swing.JButton();
         excluirDefesa = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        CPFMem1 = new javax.swing.JTextField();
+        CPFMem2 = new javax.swing.JTextField();
+        CPFMem4 = new javax.swing.JTextField();
+        CPFMem3 = new javax.swing.JTextField();
+        codigoAgendamento = new javax.swing.JTextField();
+        mtriculaAlunoAgen = new javax.swing.JTextField();
+        CPFOrientadorAgen = new javax.swing.JTextField();
+        codigoSalaAgen = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tabelaAgendamento = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
         cadastrarAluno1 = new javax.swing.JButton();
         deletarAluno1 = new javax.swing.JButton();
@@ -498,6 +519,25 @@ public class ControleCadastros extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField23ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cadastrarAluno.setText("Cadastrar aluno");
@@ -587,7 +627,7 @@ public class ControleCadastros extends javax.swing.JFrame {
                     .addComponent(matriculaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarAluno)
                     .addComponent(deletarAluno))
@@ -737,7 +777,7 @@ public class ControleCadastros extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(local_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel32)
@@ -759,24 +799,148 @@ public class ControleCadastros extends javax.swing.JFrame {
         alunos.addTab("Sala de Defesa", jPanel10);
 
         agendarDefesa.setText("Agendar Defesa");
+        agendarDefesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agendarDefesaActionPerformed(evt);
+            }
+        });
 
         excluirDefesa.setText("Excluir defesa");
+        excluirDefesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirDefesaActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setText("Código de Agendamento");
+
+        jLabel34.setText("Código da Sala");
+
+        jLabel35.setText("Matrícula do Aluno");
+
+        jLabel36.setText("CPF Professor Orientador");
+
+        jLabel37.setText("CPF Membro 1");
+
+        jLabel38.setText("CPF Membro 2");
+
+        jLabel39.setText("CPF Membro 3");
+
+        jLabel40.setText("CPF Membro 4");
+
+        CPFMem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CPFMem3ActionPerformed(evt);
+            }
+        });
+
+        mtriculaAlunoAgen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mtriculaAlunoAgenActionPerformed(evt);
+            }
+        });
+
+        tabelaAgendamento.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Código Agendamento", "Código Sala", "Matrícula Aluno", "CPF Professor", "CPF Mem.1", "CPF Mem.2", "CPF Mem.3", "CPF Mem.4"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tabelaAgendamento);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(agendarDefesa)
-                .addGap(18, 18, 18)
-                .addComponent(excluirDefesa)
-                .addContainerGap(512, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(agendarDefesa)
+                        .addGap(18, 18, 18)
+                        .addComponent(excluirDefesa)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel36))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(mtriculaAlunoAgen)
+                                            .addComponent(CPFOrientadorAgen))
+                                        .addGap(71, 71, 71)
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel39)
+                                            .addComponent(jLabel40)))
+                                    .addComponent(codigoSalaAgen, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addGap(15, 15, 15)
+                                .addComponent(codigoAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel37))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CPFMem1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                            .addComponent(CPFMem2)
+                            .addComponent(CPFMem3)
+                            .addComponent(CPFMem4)))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane5)))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap(443, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel37)
+                    .addComponent(CPFMem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigoAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel38)
+                    .addComponent(CPFMem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigoSalaAgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CPFMem3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mtriculaAlunoAgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel40)
+                    .addComponent(CPFMem4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CPFOrientadorAgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agendarDefesa)
                     .addComponent(excluirDefesa))
@@ -905,7 +1069,7 @@ public class ControleCadastros extends javax.swing.JFrame {
                 .addComponent(externo2_)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarAluno1)
                     .addComponent(deletarAluno1))
@@ -1000,6 +1164,17 @@ public class ControleCadastros extends javax.swing.JFrame {
 
     private void deletarAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarAluno1ActionPerformed
         // TODO add your handling code here:
+        int posicao = tabelaAlunos.getSelectedRow();
+        if(posicao == -1){
+            JOptionPane.showMessageDialog(this, "Por favor selecione uma linha");
+        }
+        else{
+            DefaultTableModel tabelaAluno =
+            (DefaultTableModel) tabelaAlunos.getModel();
+            tabelaAluno.removeRow(posicao);
+            JOptionPane.showMessageDialog(this, "Aluno Excluído");
+
+        }
     }//GEN-LAST:event_deletarAluno1ActionPerformed
 
     private void deletarAluno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletarAluno1MouseClicked
@@ -1064,6 +1239,16 @@ public class ControleCadastros extends javax.swing.JFrame {
 
     private void deletarAluno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarAluno2ActionPerformed
         // TODO add your handling code here:
+        int posicao = tabelaSalaDeDefesa.getSelectedRow();
+        if(posicao == -1){
+            JOptionPane.showMessageDialog(this, "Por favor selecione uma linha");
+        }
+        else{
+            DefaultTableModel tabelaSalaDef =
+            (DefaultTableModel) tabelaSalaDeDefesa.getModel();
+            tabelaSalaDef.removeRow(posicao);
+            JOptionPane.showMessageDialog(this, "Aluno Excluído");
+        }
     }//GEN-LAST:event_deletarAluno2ActionPerformed
 
     private void codigoSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoSalaActionPerformed
@@ -1089,6 +1274,61 @@ public class ControleCadastros extends javax.swing.JFrame {
     private void horarioFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horarioFimActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_horarioFimActionPerformed
+
+    private void CPFMem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPFMem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CPFMem3ActionPerformed
+
+    private void mtriculaAlunoAgenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mtriculaAlunoAgenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mtriculaAlunoAgenActionPerformed
+
+    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23ActionPerformed
+
+    private void agendarDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendarDefesaActionPerformed
+        // TODO add your handling code here:
+        String codigo_Agendamento = codigoAgendamento.getText();
+        String codigo_SalaAgen = codigoSalaAgen.getText();
+        String mtricula_AlunoAgen = mtriculaAlunoAgen.getText();
+        String CPF_OrientadorAgen = CPFOrientadorAgen.getText();
+        String CPF_Mem1 = CPFMem1.getText();
+        String CPF_Mem2 = CPFMem2.getText();
+        String CPF_Mem3 = CPFMem3.getText();
+        String CPF_Mem4 = CPFMem4.getText();
+
+        DefaultTableModel tabelaAgendamento_ =
+        (DefaultTableModel) tabelaAgendamento.getModel();
+
+        Object[] novoAgendamento = new Object[]{
+            codigoAgendamento,
+            codigoSalaAgen,
+            mtriculaAlunoAgen,
+            CPFOrientadorAgen,
+            CPFMem1,
+            CPFMem2,
+            CPFMem3,
+            CPFMem4
+        };
+
+        tabelaAgendamento_.addRow(novoAgendamento);
+    }//GEN-LAST:event_agendarDefesaActionPerformed
+
+    private void excluirDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirDefesaActionPerformed
+        // TODO add your handling code here:
+        int posicao = tabelaAgendamento.getSelectedRow();
+        if(posicao == -1){
+            JOptionPane.showMessageDialog(this, "Por favor selecione uma linha");
+        }
+        else{
+            DefaultTableModel tabelaAgendamento =
+            (DefaultTableModel) tabelaAlunos.getModel();
+            tabelaAgendamento.removeRow(posicao);
+            JOptionPane.showMessageDialog(this, "Aluno Excluído");
+
+        }
+    }//GEN-LAST:event_excluirDefesaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1126,12 +1366,19 @@ public class ControleCadastros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CPFMem1;
+    private javax.swing.JTextField CPFMem2;
+    private javax.swing.JTextField CPFMem3;
+    private javax.swing.JTextField CPFMem4;
+    private javax.swing.JTextField CPFOrientadorAgen;
     private javax.swing.JButton agendarDefesa;
     private javax.swing.JTabbedPane alunos;
     private javax.swing.JButton cadastrarAluno;
     private javax.swing.JButton cadastrarAluno1;
     private javax.swing.JButton cadastrarAluno2;
+    private javax.swing.JTextField codigoAgendamento;
     private javax.swing.JTextField codigoSala;
+    private javax.swing.JTextField codigoSalaAgen;
     private javax.swing.JTextField cpf_;
     private javax.swing.JButton deletarAluno;
     private javax.swing.JButton deletarAluno1;
@@ -1180,7 +1427,15 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1197,6 +1452,9 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -1207,6 +1465,7 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
@@ -1216,9 +1475,11 @@ public class ControleCadastros extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField local_;
     private javax.swing.JTextField matriculaAluno;
+    private javax.swing.JTextField mtriculaAlunoAgen;
     private javax.swing.JTextField nomeAluno;
     private javax.swing.JTextField nomeProfessor;
     private javax.swing.JTextField nomeSala;
+    private javax.swing.JTable tabelaAgendamento;
     private javax.swing.JTable tabelaAlunos;
     private javax.swing.JTable tabelaProfessores;
     private javax.swing.JTable tabelaSalaDeDefesa;
